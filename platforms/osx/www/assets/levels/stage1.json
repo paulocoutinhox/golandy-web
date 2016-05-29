@@ -1,7 +1,0 @@
-{
-	"assets": {
-        "enemyBalloon": {"type": "spritesheet", "source": "assets/images/enemyBalloon.png", "frame_width": 110, "frame_height": 160},
-        "player": {"type": "spritesheet", "source": "assets/images/player.png", "frame_width": 106, "frame_height": 66},
-        "stage1Background": {"type": "image", "source": "assets/images/stages/1/background.png"}
-    }
-}
