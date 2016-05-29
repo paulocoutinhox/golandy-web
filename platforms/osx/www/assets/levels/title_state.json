@@ -1,0 +1,33 @@
+{
+	"assets": {
+        "background": {"type": "image", "source": "assets/images/stateTitle/background.png"},
+        "menuStartGame": {"type": "spritesheet", "source": "assets/images/stateTitle/menuStartGame.png", "frame_width": 550, "frame_height": 130}
+    },
+    "menu_items": {
+        "classic_mode": {
+            "position": {"x": 120, "y": 144},
+            "properties": {
+                "text": "Classic modeS",
+                "style": {"font": "16px Arial", "fill": "#FFF"},
+                "group": "menu_items",
+                "level_file": "assets/levels/level1.json",
+                "state_name": "ClassicState"
+            }
+        },
+        "battle_mode": {
+            "position": {"x": 120, "y": 192},
+            "properties": {
+                "text": "Battle mode",
+                "style": {"font": "16px Arial", "fill": "#FFF"},
+                "group": "menu_items",
+                "level_file": "assets/levels/battle_level.json",
+                "state_name": "BattleState"
+            }
+        }
+    },
+    "groups": [
+        "background",
+        "menu_items",
+        "hud"
+    ]
+}

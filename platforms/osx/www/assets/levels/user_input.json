@@ -1,0 +1,76 @@
+{
+    "keydown": {
+        "W": {
+            "callback": "player1.change_movement",
+            "args": [0, -1, true]
+        },
+        "S": {
+            "callback": "player1.change_movement",
+            "args": [0, 1, true]
+        },
+        "A": {
+            "callback": "player1.change_movement",
+            "args": [-1, 0, true]
+        },
+        "D": {
+            "callback": "player1.change_movement",
+            "args": [1, 0, true]
+        },
+        "Z": {
+            "callback": "player1.try_dropping_bomb"
+        },
+        "U": {
+            "callback": "player2.change_movement",
+            "args": [0, -1, true]
+        },
+        "J": {
+            "callback": "player2.change_movement",
+            "args": [0, 1, true]
+        },
+        "H": {
+            "callback": "player2.change_movement",
+            "args": [-1, 0, true]
+        },
+        "K": {
+            "callback": "player2.change_movement",
+            "args": [1, 0, true]
+        },
+        "N": {
+            "callback": "player2.try_dropping_bomb"
+        }
+    },
+    "keyup": {
+        "W": {
+            "callback": "player1.change_movement",
+            "args": [0, -1, false]
+        },
+        "S": {
+            "callback": "player1.change_movement",
+            "args": [0, 1, false]
+        },
+        "A": {
+            "callback": "player1.change_movement",
+            "args": [-1, 0, false]
+        },
+        "D": {
+            "callback": "player1.change_movement",
+            "args": [1, 0, false]
+        },
+        "U": {
+            "callback": "player2.change_movement",
+            "args": [0, -1, false]
+        },
+        "J": {
+            "callback": "player2.change_movement",
+            "args": [0, 1, false]
+        },
+        "H": {
+            "callback": "player2.change_movement",
+            "args": [-1, 0, false]
+        },
+        "K": {
+            "callback": "player2.change_movement",
+            "args": [1, 0, false]
+        }
+    }
+}

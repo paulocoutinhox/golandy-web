@@ -1,0 +1,30 @@
+{
+	"assets": {
+        "connecting": {"type": "image", "source": "assets/images/meta/connecting.png"},
+        "playerSpritesheet001": {"type": "spritesheet", "source": "assets/images/chars/char001.png", "frame_width": 32, "frame_height": 48},
+        "playerSpritesheet002": {"type": "spritesheet", "source": "assets/images/chars/char002.png", "frame_width": 48, "frame_height": 72},
+        "playerSpritesheet003": {"type": "spritesheet", "source": "assets/images/chars/char003.png", "frame_width": 107.5, "frame_height": 144.75},
+        "playerSpritesheet004": {"type": "spritesheet", "source": "assets/images/chars/char004.png", "frame_width": 48, "frame_height": 48},
+        "playerSpritesheet005": {"type": "spritesheet", "source": "assets/images/chars/char005.png", "frame_width": 80, "frame_height": 80},
+        "playerSpritesheet006": {"type": "spritesheet", "source": "assets/images/chars/char006.png", "frame_width": 32, "frame_height": 48},
+        "playerSpritesheet007": {"type": "spritesheet", "source": "assets/images/chars/char007.png", "frame_width": 48, "frame_height": 72},
+        "effectSpritesheet001": {"type": "spritesheet", "source": "assets/images/effects/effect001.png", "frame_width": 192, "frame_height": 192},
+        "effectSpritesheet002": {"type": "spritesheet", "source": "assets/images/effects/effect002.png", "frame_width": 192, "frame_height": 192},
+        "effectSpritesheet003": {"type": "spritesheet", "source": "assets/images/effects/effect003.png", "frame_width": 196, "frame_height": 200},
+        "map0001": {"type": "tilemap", "source": "assets/maps/map0001.json"},
+        "meta": {"type": "image", "source": "assets/images/tilesets/meta.png"},
+        "tileset1": {"type": "image", "source": "assets/images/tilesets/tileset1.png"},
+        "stateBackgroundDefault": {"type": "image", "source": "assets/images/meta/state-background-default.jpg"},
+        "buttonStartGame": {"type": "image", "source": "assets/images/meta/button-start-game.png"},
+        "connectionState": {"type": "spritesheet", "source": "assets/images/meta/connection-state.png", "frame_width": 32, "frame_height": 32},
+        "bombSpritesheet001": {"type": "spritesheet", "source": "assets/images/bombs/bomb001.png", "frame_width": 32, "frame_height": 32},
+        "bombFlameSpritesheet001": {"type": "spritesheet", "source": "assets/images/bombs/bomb001-flame.png", "frame_width": 32, "frame_height": 32},
+        "background001": {"type": "image", "source": "assets/images/backgrounds/background001.jpg"},
+        "background002": {"type": "image", "source": "assets/images/backgrounds/background002.png"},
+        "background003": {"type": "image", "source": "assets/images/backgrounds/background003.jpg"},
+        "guiPanel": {"type": "image", "source": "assets/images/gui/panel.png"},
+        "guiHeaderLevelCompleted": {"type": "image", "source": "assets/images/gui/lvlcomplete.png"},
+        "guiButton": {"type": "image", "source": "assets/images/gui/orange-btn.png"},
+        "buttonAddBomb": {"type": "image", "source": "assets/images/gui/button-add-bomb.png"}
+    }
+}

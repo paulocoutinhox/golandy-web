@@ -1,0 +1,23 @@
+{
+	"assets": {
+        "connecting": {"type": "image", "source": "assets/images/meta/connecting.png"},
+        "playerSpritesheet001": {"type": "spritesheet", "source": "assets/images/chars/char001.png", "frame_width": 32, "frame_height": 48},
+        "playerSpritesheet002": {"type": "spritesheet", "source": "assets/images/chars/char002.png", "frame_width": 48, "frame_height": 72},
+        "effectSpritesheet001": {"type": "spritesheet", "source": "assets/images/effects/effect001.png", "frame_width": 192, "frame_height": 192},
+        "effectSpritesheet002": {"type": "spritesheet", "source": "assets/images/effects/effect002.png", "frame_width": 192, "frame_height": 192},
+        "effectSpritesheet003": {"type": "spritesheet", "source": "assets/images/effects/effect003.png", "frame_width": 196, "frame_height": 200},
+        "map001": {"type": "tilemap", "source": "assets/maps/map1.json"},
+        "meta": {"type": "image", "source": "assets/images/tilesets/meta.png"},
+        "tileset1": {"type": "image", "source": "assets/images/tilesets/tileset1.png"},
+        "stateBackgroundDefault": {"type": "image", "source": "assets/images/meta/state-background-default.jpg"},
+        "buttonStartGame": {"type": "image", "source": "assets/images/meta/button-start-game.png"},
+        "connectionState": {"type": "spritesheet", "source": "assets/images/meta/connection-state.png", "frame_width": 32, "frame_height": 32},
+        "bombSpritesheet001": {"type": "spritesheet", "source": "assets/images/bombs/bomb001.png", "frame_width": 32, "frame_height": 32},
+        "bombFlameSpritesheet001": {"type": "spritesheet", "source": "assets/images/bombs/bomb001-flame.png", "frame_width": 32, "frame_height": 32},
+        "background001": {"type": "image", "source": "assets/images/backgrounds/background001.jpg"},
+        "guiPanel": {"type": "image", "source": "assets/images/gui/panel.png"},
+        "guiHeaderLevelCompleted": {"type": "image", "source": "assets/images/gui/lvlcomplete.png"},
+        "guiButton": {"type": "image", "source": "assets/images/gui/orange-btn.png"},
+        "buttonAddBomb": {"type": "image", "source": "assets/images/gui/button-add-bomb.png"}
+    }
+}

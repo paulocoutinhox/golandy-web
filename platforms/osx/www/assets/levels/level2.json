@@ -1,0 +1,32 @@
+{
+    "assets": {
+        "map_tiles": {"type": "image", "source": "assets/images/bomberman_spritesheet.png"},
+        "player_spritesheet": {"type": "spritesheet", "source": "assets/images/player_spritesheet.png", "frame_width": 16, "frame_height": 16},
+        "bomb_spritesheet": {"type": "spritesheet", "source": "assets/images/bomb_spritesheet.png", "frame_width": 16, "frame_height": 16},
+        "enemy_spritesheet": {"type": "spritesheet", "source": "assets/images/enemy_spritesheet.png", "frame_width": 16, "frame_height": 16},
+        "explosion_image": {"type": "image", "source": "assets/images/explosion.png"},
+        "heart_image": {"type": "image", "source": "assets/images/heart.png"},
+        "target_image": {"type": "image", "source": "assets/images/target.png"},
+        "goal_image": {"type": "image", "source": "assets/images/portal.png"},
+        "life_item_image": {"type": "image", "source": "assets/images/life_item.png"},
+        "bomb_item_image": {"type": "image", "source": "assets/images/bomb_item.png"},
+        
+        "level_tilemap": {"type": "tilemap", "source": "assets/maps/level2_map.json"}
+    },
+    "groups": [
+        "targets",
+        "items",
+        "explosions",
+        "bombs",
+        "goals",
+        "enemies",
+        "players",
+        "hud"
+    ],
+    "map": {
+        "key": "level_tilemap",
+        "tilesets": ["map_tiles"]
+    },
+    "user_input": "assets/levels/user_input.json",
+    "next_level": "assets/levels/level1.json"
+}
