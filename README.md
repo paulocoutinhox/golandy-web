@@ -16,24 +16,28 @@ Check boot file (https://github.com/prsolucoes/golandy-web/blob/master/www/js/st
 **To run in your mac/osx**
 
 ```sh
+cordova platform add osx
 cordova run osx
 ```
 
 **To run in your browser**
 
 ```sh
+cordova platform add browser
 cordova run browser
 ```
 
 **To run in your android device**
 
 ```sh
+cordova platform add android
 cordova run android
 ```
 
 **To run in your iOS device**
 
 ```sh
+cordova platform add ios
 cordova run ios
 ```
 
