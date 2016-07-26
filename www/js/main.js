@@ -4,9 +4,9 @@
 
 var GameApp = GameApp || {};
 GameApp.USE_DEVICE_PIXEL_RATIO = false;
-GameApp.ASSETS_VERSION = '49';
+GameApp.ASSETS_VERSION = '50';
 GameApp.TILE_SIZE = 32;
-GameApp.APP_VERSION = '1.0.26';
+GameApp.APP_VERSION = '1.0.27';
 GameApp.DEBUG = false;
 
 if (GameApp.USE_DEVICE_PIXEL_RATIO) {

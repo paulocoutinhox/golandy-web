@@ -219,15 +219,17 @@ GameApp.GameState.prototype.create = function () {
                     var buttonAddBombX = game.camera.x;
                     var buttonAddBombY = game.camera.height - buttonAddBombH;
 
-                    context.buttonAddBombBG = game.add.sprite(buttonAddBombX, buttonAddBombY, 'connectionState');
-                    context.buttonAddBombBG.fixedToCamera = true;
-                    context.buttonAddBombBG.width = buttonAddBombW;
-                    context.buttonAddBombBG.height = buttonAddBombH;
-                    context.buttonAddBombBG.inputEnabled = true;
-                    //context.buttonAddBombBG.input.priorityID = 1;
-                    context.buttonAddBombBG.tint = 0xFF0000;
-                    context.buttonAddBombBG.backgroundColor = 0xFF0000;
-                    context.groups.hud.add(context.buttonAddBombBG);
+                    /*
+                     context.buttonAddBombBG = game.add.sprite(buttonAddBombX, buttonAddBombY, 'connectionState');
+                     context.buttonAddBombBG.fixedToCamera = true;
+                     context.buttonAddBombBG.width = buttonAddBombW;
+                     context.buttonAddBombBG.height = buttonAddBombH;
+                     context.buttonAddBombBG.inputEnabled = true;
+                     context.buttonAddBombBG.input.priorityID = 1;
+                     context.buttonAddBombBG.tint = 0xFF0000;
+                     context.buttonAddBombBG.backgroundColor = 0xFF0000;
+                     context.groups.hud.add(context.buttonAddBombBG);
+                     */
 
                     context.buttonAddBomb = game.add.button(buttonAddBombX, buttonAddBombY, 'buttonAddBomb', function () {
                         if (context.playerCanAddBomb()) {
@@ -237,7 +239,7 @@ GameApp.GameState.prototype.create = function () {
                     }, this, 1, 0, 1, 1);
 
                     context.buttonAddBomb.fixedToCamera = true;
-                    //context.buttonAddBomb.priorityID = 2;
+                    context.buttonAddBomb.priorityID = 0;
                     context.groups.hud.add(context.buttonAddBomb);
 
                     break;
@@ -251,6 +253,14 @@ GameApp.GameState.prototype.create = function () {
                 case "bomb-added":
                     if (context.bombs) {
                         context.bombs[m.id] = context.spawnBomb(m);
+
+                        if (GameApp.DEBUG) {
+                            console.log("New bomb added: " + m.id + " - X: " + m.x + " - Y: " + m.y);
+                        }
+                    } else {
+                        if (GameApp.DEBUG) {
+                            console.log("Bomb list is not defined");
+                        }
                     }
                     break;
 
@@ -259,9 +269,21 @@ GameApp.GameState.prototype.create = function () {
                         var bomb = context.bombs[m.id];
 
                         if (bomb) {
-                            context.spawnBombFired(bomb)
+                            if (GameApp.DEBUG) {
+                                console.log("New bomb fired: " + m.id + " - X: " + m.x + " - Y: " + m.y);
+                            }
+
+                            context.spawnBombFired(bomb);
                             bomb.sprite.destroy();
                             bomb = null;
+                        } else {
+                            if (GameApp.DEBUG) {
+                                console.log("Bomb was not found to be fired: " + m.id);
+                            }
+                        }
+                    } else {
+                        if (GameApp.DEBUG) {
+                            console.log("No local bombs to be fired");
                         }
                     }
                     break;
@@ -759,12 +781,12 @@ GameApp.GameState.prototype.playerSetPosition = function (player, x, y, now) {
 
     var useTween = true;
 
+    player.position.x = x;
+    player.position.y = y;
+
     if (now) {
         player.sprite.x = destinationX;
         player.sprite.y = destinationY;
-
-        player.position.x = x;
-        player.position.y = y;
 
         this.playerLabelSetPosition(player);
 
@@ -872,6 +894,10 @@ GameApp.GameState.prototype.playerCanAddBomb = function () {
 
 GameApp.GameState.prototype.sendPositionCommand = function (posX, posY, direction) {
     "use strict";
+
+    if (GameApp.DEBUG) {
+        console.log("Your new position: X: " + posX + " - Y: " + posY);
+    }
 
     var msg = JSON.stringify({
         type: "move",
