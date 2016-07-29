@@ -58,7 +58,6 @@ GameApp.GameState.prototype.resetStateData = function () {
     // gui
     this.connectionState = null;
     this.buttonAddBomb = null;
-    this.buttonAddBombBG = null;
 
     // map
     this.map = null;
@@ -219,24 +218,15 @@ GameApp.GameState.prototype.create = function () {
                     var buttonAddBombX = game.camera.x;
                     var buttonAddBombY = game.camera.height - buttonAddBombH;
 
-                    /*
-                     context.buttonAddBombBG = game.add.sprite(buttonAddBombX, buttonAddBombY, 'connectionState');
-                     context.buttonAddBombBG.fixedToCamera = true;
-                     context.buttonAddBombBG.width = buttonAddBombW;
-                     context.buttonAddBombBG.height = buttonAddBombH;
-                     context.buttonAddBombBG.inputEnabled = true;
-                     context.buttonAddBombBG.input.priorityID = 1;
-                     context.buttonAddBombBG.tint = 0xFF0000;
-                     context.buttonAddBombBG.backgroundColor = 0xFF0000;
-                     context.groups.hud.add(context.buttonAddBombBG);
-                     */
-
-                    context.buttonAddBomb = game.add.button(buttonAddBombX, buttonAddBombY, 'buttonAddBomb', function () {
+                    context.buttonAddBomb = game.add.sprite(buttonAddBombX, buttonAddBombY, 'buttonAddBomb');
+                    context.buttonAddBomb.inputEnabled = true;
+                    context.buttonAddBomb.events.onInputDown.add(function() {
                         if (context.playerCanAddBomb()) {
                             context.player.lastAddBombTime = new Date();
                             context.sendAddBombCommand(context.player.position.x, context.player.position.y);
                         }
-                    }, this, 1, 0, 1, 1);
+                    });
+                    context.buttonAddBomb.useHandCursor = true;
 
                     context.buttonAddBomb.fixedToCamera = true;
                     context.buttonAddBomb.priorityID = 0;
@@ -473,13 +463,16 @@ GameApp.GameState.prototype.update = function () {
         } else if (game.input.keyboard.isDown(Phaser.Keyboard.ENTER)) {
             game.state.start("LoadingState", true, false, null, null, "TitleState");
         } else if (game.input.activePointer.isDown) {
-            this.playerCancelMovement();
-
-            this.player.isMoving = true;
+            if (Phaser.Rectangle.contains(this.buttonAddBomb, game.input.activePointer.worldX, game.input.activePointer.worldY)) {
+                return;
+            }
 
             var currentTile = this.map.getTile(this.floorLayer.getTileX(game.input.activePointer.worldX), this.floorLayer.getTileY(game.input.activePointer.worldY));
 
             if (currentTile) {
+                this.playerCancelMovement();
+                this.player.isMoving = true;
+
                 this.addSpawnEffect({
                     x: currentTile.x * GameApp.TILE_SIZE,
                     y: currentTile.y * GameApp.TILE_SIZE,
