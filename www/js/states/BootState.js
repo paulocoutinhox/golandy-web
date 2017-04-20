@@ -18,9 +18,9 @@ GameApp.BootState.prototype.init = function () {
     game.scale.setScreenSize = true;
     game.scale.refresh();
 
-    var serverIP = "golandy.prsolucoes.com:9002";
+    var serverIP = "golandy-server.prsolucoes.com:9002";
 
-    if (document.location.hostname != "golandy.prsolucoes.com" && document.location.hostname != "golandy.com") {
+    if (document.location.hostname != "golandy.prsolucoes.com") {
         serverIP = document.location.hostname + ":3030";
         GameApp.DEBUG = true;
     }
@@ -29,7 +29,7 @@ GameApp.BootState.prototype.init = function () {
         //game.add.plugin(Phaser.Plugin.Debug);
     }
 
-    //serverIP = "golandy.prsolucoes.com:9002";
+    //serverIP = "golandy-server.prsolucoes.com:9002";
 
     GameApp.data = {
         socket: null,
