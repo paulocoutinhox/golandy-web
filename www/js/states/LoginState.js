@@ -29,7 +29,7 @@ GameApp.LoginState.prototype.create = function () {
 
     // conecta ao servidor
     GameApp.data.socket = null;
-    GameApp.data.socket = new WebSocket("ws://" + GameApp.data.serverIP + ":3030/ws");
+    GameApp.data.socket = new WebSocket("ws://" + GameApp.data.serverIP + "/ws");
 
     GameApp.data.socket.onopen = function () {
         var message = JSON.stringify({
