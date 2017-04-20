@@ -18,7 +18,7 @@ GameApp.BootState.prototype.init = function () {
     game.scale.setScreenSize = true;
     game.scale.refresh();
 
-    var serverIP = "server.golandy.com";
+    var serverIP = "golandy.prsolucoes.com";
 
     if (document.location.hostname != "golandy.prsolucoes.com" && document.location.hostname != "golandy.com") {
         serverIP = document.location.hostname;
