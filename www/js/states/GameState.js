@@ -189,16 +189,20 @@ GameApp.GameState.prototype.create = function () {
 
                         context.floorLayer = context.map.createLayer('Floor', null, null, context.groups.mapFloor);
                         context.floorLayer.resizeWorld();
-
+							
+						// the new camera dont show it, so we will disable for now
+						/*
                         var bgX = -(GameApp.CANVAS_WIDTH);
                         var bgY = -(GameApp.CANVAS_HEIGHT);
                         var bgWidth = GameApp.CANVAS_WIDTH * 3;
                         var bgHeight = GameApp.CANVAS_HEIGHT * 4;
                         context.backgroundTileSprite = game.add.tileSprite(bgX, bgY, bgWidth, bgHeight, 'background003');
                         context.groups.background.add(context.backgroundTileSprite);
+						*/
                     }
 
                     context.player = context.spawn(m);
+					game.camera.follow(context.player.sprite);
 					context.sendPingCommand();
 
                     game.physics.enable(context.player.sprite, Phaser.Physics.ARCADE);
@@ -436,14 +440,17 @@ GameApp.GameState.prototype.update = function () {
         this.backgroundTileSprite.autoScroll(4, 4);
     }
 
-    var cameraX = Math.round(this.player.sprite.x - (game.camera.width / 2));
-    var cameraY = Math.round(this.player.sprite.y - (game.camera.height / 2));
+	// this code is not working on newer versions
+	/*
+    var cameraX = Math.round((this.player.sprite.x) - (game.camera.width / 2));
+    var cameraY = Math.round((this.player.sprite.y) - (game.camera.height / 2));
 
     if (cameraX != game.camera.X || cameraY != game.camera.Y) {
         game.camera.bounds = new Phaser.Rectangle(this.player.sprite.x + (game.camera.width / 2), this.player.sprite.y + (game.camera.height / 2), 0, 0);
         game.camera.x = cameraX;
         game.camera.y = cameraY;
     }
+	*/
 
     if (this.player.isMoving) {
         // vale a pena notificar o usuário disso?
