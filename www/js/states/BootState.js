@@ -29,7 +29,7 @@ GameApp.BootState.prototype.init = function () {
         //game.add.plugin(Phaser.Plugin.Debug);
     }
 
-    serverIP = "golandy-server.prsolucoes.com:9002";
+    //serverIP = "golandy-server.prsolucoes.com:9002";
 
     GameApp.data = {
         socket: null,
