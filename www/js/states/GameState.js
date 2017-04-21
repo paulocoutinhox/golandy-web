@@ -182,12 +182,12 @@ GameApp.GameState.prototype.create = function () {
                 case "player-data":
                     if (context.map == null) {
                         context.map = game.add.tilemap(m.map);
-                        //context.map.priorityID = 0;
+						//context.map.priorityID = 0;
 
                         context.map.addTilesetImage('meta', 'meta');
                         context.map.addTilesetImage('tileset1', 'tileset1');
 
-                        context.floorLayer = context.map.createLayer('Floor', undefined, undefined, context.groups.mapFloor);
+                        context.floorLayer = context.map.createLayer('Floor', null, null, context.groups.mapFloor);
                         context.floorLayer.resizeWorld();
 
                         var bgX = -(GameApp.CANVAS_WIDTH);
@@ -199,7 +199,7 @@ GameApp.GameState.prototype.create = function () {
                     }
 
                     context.player = context.spawn(m);
-                    context.sendPingCommand();
+					context.sendPingCommand();
 
                     game.physics.enable(context.player.sprite, Phaser.Physics.ARCADE);
 
