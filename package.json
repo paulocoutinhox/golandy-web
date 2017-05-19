@@ -1,0 +1,21 @@
+{
+    "name": "com.prsolucoe.golandy",
+    "version": "1.0.14",
+    "displayName": "Golandy",
+    "cordova": {
+        "platforms": [
+            "ios",
+            "osx"
+        ],
+        "plugins": {
+            "cordova-plugin-whitelist": {}
+        }
+    },
+    "dependencies": {
+        "cordova-ios": "~4.4.0",
+        "cordova-osx": "^4.0.1",
+        "cordova-plugin-whitelist": "1",
+        "mac": "^0.4.0",
+        "macos": "0.0.1"
+    }
+}
