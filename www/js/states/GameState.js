@@ -194,9 +194,9 @@ GameApp.GameState.prototype.create = function () {
 
 						game.world.setBounds(-(layerWidth/2), -(layerHeight/2), layerWidth * 2, layerHeight * 2);
 
-						console.log("MAPA:");
-						console.log(layerWidth);
-						console.log(layerHeight);
+						// console.log("MAPA:");
+						// console.log(layerWidth);
+						// console.log(layerHeight);
 							
 						// the new camera dont show it, so we will disable for now
 						/*
