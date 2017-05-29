@@ -191,7 +191,7 @@ GameApp.GameState.prototype.create = function () {
 						var layerHeight = game.height;
 
 						context.floorLayer = context.map.createLayer('Floor', null, null, context.groups.mapFloor);
-						context.floorLayer.resize(-(layerWidth / 2), -(layerHeight / 2), layerWidth * 2, layerHeight * 2);
+						context.floorLayer.resize(-layerWidth, -layerHeight, layerWidth * 2, layerHeight * 2);
 
 						// console.log("MAPA:");
 						// console.log(layerWidth);
