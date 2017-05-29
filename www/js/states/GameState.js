@@ -189,14 +189,21 @@ GameApp.GameState.prototype.create = function () {
 
 						context.floorLayer = context.map.createLayer('Floor', null, null, context.groups.mapFloor);
 
-						var layerWidth = context.floorLayer.layer.widthInPixels * context.floorLayer.scale.x;
-						var layerHeight = context.floorLayer.layer.heightInPixels * context.floorLayer.scale.y;
+						var layerWidth = game.width;
+						var layerHeight = game.height;
 
-						game.world.setBounds(-(layerWidth / 2), -(layerHeight / 2), layerWidth * 2, layerHeight * 2);
+						game.world.setBounds(-(layerWidth), -(layerHeight), layerWidth * 3, layerHeight * 3);
+						context.floorLayer.resize(layerWidth, layerHeight);
 
-						// console.log("MAPA:");
-						// console.log(layerWidth);
-						// console.log(layerHeight);
+						console.log("LAYER:");
+						console.log(layerWidth);
+						console.log(layerHeight);
+
+						console.log("WORLD:");
+						console.log(game.widthInPixels);
+						console.log(game.heightInPixels);
+						console.log(game.width);
+						console.log(game.height);
 
 						// the new camera dont show it, so we will disable for now
 						/*
