@@ -187,9 +187,12 @@ GameApp.GameState.prototype.create = function () {
 						context.map.addTilesetImage('meta', 'meta');
 						context.map.addTilesetImage('tileset1', 'tileset1');
 
+						var layerWidth = game.width;
+						var layerHeight = game.height;
+
 						context.floorLayer = context.map.createLayer('Floor', null, null, context.groups.mapFloor);
-						context.floorLayer.resize(game.width, game.height);
-						
+						context.floorLayer.resize(-(layerWidth / 2), -(layerHeight / 2), layerWidth * 2, layerHeight * 2);
+
 						// console.log("MAPA:");
 						// console.log(layerWidth);
 						// console.log(layerHeight);
