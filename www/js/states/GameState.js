@@ -195,16 +195,6 @@ GameApp.GameState.prototype.create = function () {
 						game.world.setBounds(-(layerWidth), -(layerHeight), layerWidth * 3, layerHeight * 3);
 						context.floorLayer.resize(layerWidth, layerHeight);
 
-						console.log("LAYER:");
-						console.log(layerWidth);
-						console.log(layerHeight);
-
-						console.log("WORLD:");
-						console.log(game.widthInPixels);
-						console.log(game.heightInPixels);
-						console.log(game.width);
-						console.log(game.height);
-
 						// the new camera dont show it, so we will disable for now
 						/*
                         var bgX = -(GameApp.CANVAS_WIDTH);
